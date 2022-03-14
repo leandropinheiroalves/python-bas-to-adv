@@ -1,4 +1,4 @@
-"""Aula 01 - SQLite usando o módulo sqlite3"""
+"""Aula 01: SQLite usando o módulo sqlite3"""
 
 import sqlite3
 
