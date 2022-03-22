@@ -14,7 +14,7 @@ class ContatoAdmin(admin.ModelAdmin):
     # list_filter = ('nome', 'sobrenome')
 
     # configura o número de dados mostrados por página
-    list_per_page = 1
+    list_per_page = 10
 
     # configura um campo de pesquisa nos campos informados
     search_fields = ('nome', 'sobrenome', 'telefone')
