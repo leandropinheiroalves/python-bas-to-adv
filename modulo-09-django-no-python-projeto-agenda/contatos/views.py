@@ -9,7 +9,7 @@ from .models import Contato
 
 def index(request):
     contatos = Contato.objects.order_by('-id').filter(mostrar=True)
-    paginator = Paginator(contatos, 1)
+    paginator = Paginator(contatos, 5)
     page = request.GET.get('p')
     contatos = paginator.get_page(page)
     return render(request, 'contatos/index.html', {
