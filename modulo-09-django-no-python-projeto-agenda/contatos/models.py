@@ -1,22 +1,6 @@
 from django.db import models
 from django.utils import timezone
 
-"""
-CONTATOS
-id: INT (automático)
-nome: STR * (obrigatório)
-sobrenome: STR (opcional)
-telefone: STR * (obrigatório)
-email: STR (opcional)
-data_criacao: DATETIME (automático)
-descricao: texto
-categoria: CATEGORIA (outro model)
-
- CATEGORIA
- id: INT
- nome: STR * (obrigatório)
-"""
-
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=255)
@@ -25,7 +9,7 @@ class Categoria(models.Model):
         return self.nome
 
 
-class Contato(models.Model):  # nome que irá aparecer na área adimistrativa do django
+class Contato(models.Model):
     nome = models.CharField(max_length=150)
     sobrenome = models.CharField(max_length=255, blank=True)
     telefone = models.CharField(max_length=255)
@@ -38,3 +22,4 @@ class Contato(models.Model):  # nome que irá aparecer na área adimistrativa do
 
     def __str__(self):
         return self.nome
+
