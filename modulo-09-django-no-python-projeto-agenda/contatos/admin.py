@@ -5,7 +5,7 @@ from .models import Categoria, Contato
 
 class ContatoAdmin(admin.ModelAdmin):
     # configura a forma como os dados são exibidos na area adm
-    list_display = ('id', 'nome', 'sobrenome', 'telefone', 'email', 'data_criacao', 'categoria')
+    list_display = ('id', 'nome', 'sobrenome', 'telefone', 'email', 'data_criacao', 'categoria', 'mostrar')
 
     # configura em quais das informações poderam ter links clicáveis
     list_display_links = ('id', 'nome', 'sobrenome')
@@ -18,6 +18,9 @@ class ContatoAdmin(admin.ModelAdmin):
 
     # configura um campo de pesquisa nos campos informados
     search_fields = ('nome', 'sobrenome', 'telefone')
+
+    # permite que as informações sejam editadas sem entrar na configuração
+    list_editable = ('telefone', 'mostrar')
 
 
 admin.site.register(Categoria)
